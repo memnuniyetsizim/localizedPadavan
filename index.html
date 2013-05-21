@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Localizedpadavan : async jQuery localization with cookie" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Localizedpadavan</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/taximact/localizedPadavan">View on GitHub</a>
+
+          <h1 id="project_title">Localizedpadavan</h1>
+          <h2 id="project_tagline">async jQuery localization with cookie</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/taximact/localizedPadavan/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/taximact/localizedPadavan/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>localizedPadavan v0.4</p>
+
+<p>This is for async language localization.</p>
+
+<ul>
+<li>It uses rel property of html elements. </li>
+<li>Reads &amp; writes on json </li>
+<li>On language change, language name stored on cookie so you can cache your json file with no problem.</li>
+<li>You can give a cookie name to store your cookie or script will use default.</li>
+<li>It'll have a stable admin interface on php (first), python, asp, ruby for you to implement easily but not right now.
+Actualy it's not hard to save &amp; edit a json file with simple key value state. </li>
+</ul><p>May be i can right a memcached or redis handler to read directly from cache but let's forget about it right now. 
+Cause i'm a bit lazy so; </p>
+
+<p>You can find sample usage in langControl.php</p>
+
+<div class="highlight"><pre><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s1">'text/javascript'</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'js/jquery-1.7.2.min.js'</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"js/localizedPadavan.0.8.js"</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="kd">var</span> <span class="nx">nowLang</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">cookieControl</span><span class="p">({</span> <span class="nx">key</span><span class="o">:</span><span class="s1">'langVal'</span> <span class="p">});</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">localizedPadavan</span><span class="p">({</span> <span class="nx">changeLang</span><span class="o">:</span><span class="nx">nowLang</span> <span class="p">,</span><span class="nx">langUL</span><span class="o">:</span> <span class="s1">'langList'</span><span class="p">,</span><span class="nx">cookieName</span><span class="o">:</span> <span class="s1">'langVal'</span> <span class="p">});</span> 
+    <span class="p">});</span>
+<span class="o">&lt;</span><span class="err">/script&gt; </span>
+
+<span class="o">&lt;</span><span class="nx">span</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"_main_Title"</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+</pre></div>
+
+<p>Beware of using on production right now! It's just a test and i'm working on it.</p>
+
+<p>Well, still ongoing project and not  finished so do not complain till version 1.0... 
+And I appreciate any comment from you so send a comment i'll try to fix it.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Localizedpadavan maintained by <a href="https://github.com/taximact">taximact</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-35777695-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
